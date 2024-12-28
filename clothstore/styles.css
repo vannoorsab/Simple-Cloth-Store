@@ -1,0 +1,247 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f1f1;
+}
+
+header {
+    background-color: hsl(0, 7%, 68%);
+    color: rgb(24, 24, 24);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* For the cart badge position */
+}
+
+header h1 {
+    margin: 0;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+}
+
+#category-filter {
+    margin-left: 0.5rem;
+}
+#search-button {
+    background-color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-icon i {
+    font-size: 2.0rem;
+    
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: rgb(7, 7, 7);
+    color: white;
+    border-radius: 50%;
+    padding: 4px 6px;
+    font-size: 0.8rem;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.products-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    max-width: 50%;
+    height: auto;
+}
+
+.product-card h3 {
+    margin-bottom: 1px;
+}
+
+.product-card .price {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-card button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+/* Cart Styling */
+.cart-container {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Start offscreen */
+    width: 400px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: right 0.3s ease; /* Animate the right position */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.cart-container.active {
+    right: 0; /* Move on screen */
+}
+
+
+.cart-content{
+   padding: 10px;
+}
+
+.cart-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.cart-item .item-details {
+    flex-grow: 1;
+}
+
+.cart-item .item-details h4 {
+    margin: 0;
+}
+
+.cart-item .quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item .quantity-control button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin: 0 5px;
+    color: #555;
+}
+
+.cart-item .quantity-control input {
+    width: 30px;
+    text-align: center;
+}
+
+.cart-item .price {
+    font-weight: bold;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.close-cart {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    float: right;
+    border-radius: 4px;
+}
+.close-cart:hover{
+    background-color: hsl(0, 7%, 65%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main{
+        padding: 10px;
+    }
+    .product-card {
+        width: 45%;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start; /* Align to start on smaller screens */
+    }
+
+    header h1 {
+        margin-bottom: 0.5rem; /* Space the title and search/filter */
+    }
+    .search-container, .filter-container {
+        margin-bottom: 0.5rem; /* Space out search and filter */
+        width: 100%;
+    }
+    .cart-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+     .product-card {
+          width: 90%; /* Full width for very small screens */
+     }
+}

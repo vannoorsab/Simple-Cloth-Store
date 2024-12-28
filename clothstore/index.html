@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Cloth Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+    /* Add styles for the background */
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://as1.ftcdn.net/v2/jpg/09/89/15/18/1000_F_989151817_j3hXso5NLOIa3warTDXNoOrOKeJKiP6D.jpg');
+      background-size: cover; /* Make the image cover the entire screen */
+      background-repeat: no-repeat; /* Avoid repeating the image */
+      background-position: center; /* Center the image */
+      background-attachment: fixed; /* Make it stay fixed when scrolling */
+      font-family: Arial, sans-serif;
+      color: #1e1c1c; /* Ensure text contrasts well with the background */
+    }
+
+    /* Add content styling */
+    h1 {
+      text-align: center;
+      margin-top: 20%;
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+  </style>
+
+<body>
+    <header>
+        <h1>My Cloth Store</h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search by brand...">
+            <button id="search-button"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="filter-container">
+            <label for="category-filter">Filter by Category:</label>
+            <select id="category-filter">
+                <option value="all">All</option>
+                <option value="men">Men's Clothing</option>
+                <option value="women">Women's Clothing</option>
+                <option value="kids">Kids' Clothing</option>
+            </select>
+        </div>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fa fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+    
+    <main>
+        <div class="products-container" id="product-list">
+        </div>
+
+        <div class="cart-container" id="cart-modal">
+             <div class="cart-content">
+                <h2>Shopping Cart</h2>
+                 <div id="cart-items">
+                    </div>
+                <div class="cart-total">
+                    <p>Total: $<span id="cart-total-price">0.00</span></p>
+                </div>
+                <button class="close-cart" onclick="toggleCart()">Close</button>
+           </div>
+           
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
